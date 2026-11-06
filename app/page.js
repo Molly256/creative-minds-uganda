@@ -1,19 +1,48 @@
+"use client";
+import { useState } from "react";
 import Image from "next/image";
 
 export default function Page() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <main className="min-h-screen bg-[#F6F7F9] text-[#0A1931]">
       {/* NAVBAR */}
-      <nav className="bg-white h-[76px] flex items-center justify-between px-8 lg:px-16">
-        <Image src="/logo.png" alt="logo" width={70} height={70} className="object-contain" />
-        <div className="hidden md:flex items-center gap-7 font-semibold text-[15px]">
-          <span className="text-[#6C3BAA]">Home</span>
-          <span>About</span>
-          <span>Programs</span>
-          <span>Impact</span>
-          <span>Get Involved</span>
-          <button className="bg-[#6C3BAA] text-white px-6 py-2.5 rounded-lg ml-2">DONATE</button>
+      <nav className="bg-white shadow-sm sticky top-0 z-50">
+        <div className="h-[76px] flex items-center justify-between px-4 lg:px-16">
+          <Image src="/logo.png" alt="logo" width={70} height={70} className="object-contain" />
+
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center gap-7 font-semibold text-[15px]">
+            <span className="text-[#6C3BAA]">Home</span>
+            <span>About</span>
+            <span>Programs</span>
+            <span>Impact</span>
+            <span>Get Involved</span>
+            <button className="bg-[#6C3BAA] text-white px-6 py-2.5 rounded-lg ml-2">DONATE</button>
+          </div>
+
+          {/* Mobile Hamburger Button */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="md:hidden text-3xl text-[#0A1931] px-2"
+            aria-label="Menu"
+          >
+            {menuOpen ? "✕" : "☰"}
+          </button>
         </div>
+
+        {/* Mobile Menu Dropdown */}
+        {menuOpen && (
+          <div className="md:hidden bg-white border-t flex flex-col px-6 py-4 gap-4 font-semibold text-[16px]">
+            <span className="text-[#6C3BAA]" onClick={() => setMenuOpen(false)}>Home</span>
+            <span onClick={() => setMenuOpen(false)}>About</span>
+            <span onClick={() => setMenuOpen(false)}>Programs</span>
+            <span onClick={() => setMenuOpen(false)}>Impact</span>
+            <span onClick={() => setMenuOpen(false)}>Get Involved</span>
+            <button className="bg-[#6C3BAA] text-white px-6 py-3 rounded-lg text-center" onClick={() => setMenuOpen(false)}>DONATE</button>
+          </div>
+        )}
       </nav>
 
       {/* HERO */}
@@ -88,7 +117,7 @@ export default function Page() {
         </div>
       </div>
 
-      <footer className="bg-[#070F24] text-white text-[11px] py-3 text-center">© 2024 Creative Minds Initiative Uganda • Contact: info@creativemindsug.org • Kampala, Uganda</footer>
+      <footer className="bg-[#070F24] text-white text-[11px] py-3 text-center">© 2026 Creative Minds Initiative Uganda • Contact: info@creativemindsinitiativeug.org • Kampala, Uganda</footer>
     </main>
   );
 }
