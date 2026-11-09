@@ -1,14 +1,48 @@
 "use client";
+import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ProgramsPage() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const closeMenu = () => setMenuOpen(false);
+
   return (
     <main className="min-h-screen bg-white">
+      {/* NAVBAR - With Home button */}
+      <nav className="bg-white shadow-sm sticky top-0 z-50">
+        <div className="h-[76px] flex items-center justify-between px-4 lg:px-16">
+          <Link href="/" onClick={closeMenu}>
+            <Image src="/logo.png" alt="logo" width={70} height={70} className="object-contain" />
+          </Link>
+          <div className="hidden md:flex items-center gap-7 font-semibold text-[15px] text-[#00BFFF]">
+            <Link href="/">Home</Link>
+            <Link href="/about">About</Link>
+            <Link href="/programs" className="text-[#6C3BAA]">Programs</Link>
+            <Link href="/impact">Impact</Link>
+            <Link href="/get-involved">Get Involved</Link>
+            <Link href="/get-involved" className="bg-[#6C3BAA] text-white px-6 py-2.5 rounded-lg ml-2">DONATE</Link>
+          </div>
+          <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden text-3xl text-[#00BFFF] px-2">
+            {menuOpen ? "✕" : "☰"}
+          </button>
+        </div>
+        {menuOpen && (
+          <div className="md:hidden bg-white border-t flex flex-col px-6 py-4 gap-4 font-semibold text-[16px] text-[#00BFFF]">
+            <Link href="/" onClick={closeMenu}>Home</Link>
+            <Link href="/about" onClick={closeMenu}>About</Link>
+            <Link href="/programs" onClick={closeMenu} className="text-[#6C3BAA]">Programs</Link>
+            <Link href="/impact" onClick={closeMenu}>Impact</Link>
+            <Link href="/get-involved" onClick={closeMenu}>Get Involved</Link>
+          </div>
+        )}
+      </nav>
+
       {/* HERO */}
       <div className="bg-[#00BFFF] text-white py-16 px-6 lg:px-20 text-center">
         <h1 className="text-[40px] font-black">Our Programs</h1>
         <p className="mt-3 text-[14px] max-w-[600px] mx-auto text-white/90">
-          We were all born to thrive. We empower children in Makindye, Lukuli Zone through The Mind and The Body - Education and Food for 100 children.
+          We were all born to thrive. We empower children in Makindye, Lukuli Zone through The Mind and The Body - Education, Food & Shelter for 100 children.
         </p>
       </div>
 
@@ -23,7 +57,7 @@ export default function ProgramsPage() {
           <div>
             <h3 className="font-bold text-[18px]">Why We Built Our Own School</h3>
             <p className="text-gray-600 text-[14px] mt-4 leading-relaxed">
-              When I started Creative Minds Initiative Uganda on March 20th, 2024, I was staying in Nsambya slum. I saw many children suffering - no education, no food, not healthy because their parents couldn't afford to take care of them.<br/><br/>
+              When I, <span className="font-bold">Ssemwogerere Edward</span>, started Creative Minds Initiative Uganda on March 20th, 2024, I was staying in Nsambya slum. I saw many children suffering - no education, no food, not healthy because their parents couldn't afford to take care of them.<br/><br/>
               At first, we tried to pay school fees in other schools, but it was too expensive and not sustainable. So I made a big decision - <span className="font-bold text-[#6C3BAA]">I bought land and built our own school in Makindye, Lukuli Zone.</span><br/><br/>
               Now, instead of begging other schools to take our children, we teach <span className="font-bold">100 children</span> in our own classrooms. Our teachers are from the community. They understand the pain of Nsambya because they lived it too.<br/><br/>
               We provide free education because we believe <span className="font-bold text-[#00BFFF]">every child was born to thrive</span> - with God's unique stamp, a plan and a purpose. Education is how they discover they matter.
@@ -39,7 +73,7 @@ export default function ProgramsPage() {
                 <li>Teachers who care, from our own community</li>
               </ul>
             </div>
-            <button onClick={() => window.open('https://wa.me/256773242118?text=Hello, I want to support EDUCATION program')} className="bg-[#6C3BAA] text-white font-bold px-6 py-3 rounded-lg mt-6 text-sm">SUPPORT EDUCATION - MTN 0773242118</button>
+            <button onClick={() => window.open('https://wa.me/256795624752?text=Hello Edward, I want to support EDUCATION program')} className="bg-[#6C3BAA] text-white font-bold px-6 py-3 rounded-lg mt-6 text-sm">SUPPORT EDUCATION - 0795624752</button>
           </div>
 
           {/* IMAGES FOR EDUCATION */}
@@ -68,7 +102,6 @@ export default function ProgramsPage() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-10 mt-8">
-          {/* IMAGES FOR FOOD */}
           <div className="space-y-4 order-2 lg:order-1">
             <div className="relative h-[260px] rounded-xl overflow-hidden bg-gray-100">
               <Image src="/image4.jpg" fill alt="Children eating food" className="object-cover" />
@@ -102,7 +135,7 @@ export default function ProgramsPage() {
                 <li>Nutrition support for sick/malnourished children</li>
               </ul>
             </div>
-            <button onClick={() => window.open('https://wa.me/256753185973?text=Hello, I want to support FOOD program')} className="bg-[#00BFFF] text-white font-bold px-6 py-3 rounded-lg mt-6 text-sm">SUPPORT FOOD - AIRTEL 0753185973</button>
+            <button onClick={() => window.open('https://wa.me/256753988127?text=Hello Edward, I want to support FOOD program')} className="bg-[#00BFFF] text-white font-bold px-6 py-3 rounded-lg mt-6 text-sm">SUPPORT FOOD - 0753988127</button>
           </div>
         </div>
       </div>
@@ -117,12 +150,13 @@ export default function ProgramsPage() {
           <div className="bg-white text-[#6C3BAA] px-5 py-3 rounded-lg font-bold text-xs"> $50 = Food + Education for 1 child / month </div>
         </div>
         <div className="flex justify-center gap-3 mt-6 flex-wrap">
-          <button onClick={() => window.open('https://wa.me/256773242118')} className="bg-[#00BFFF] px-6 py-3 rounded-lg font-bold text-sm">DONATE MTN: 0773242118</button>
-          <button onClick={() => window.open('https://wa.me/256753185973')} className="bg-white text-[#6C3BAA] px-6 py-3 rounded-lg font-bold text-sm">DONATE AIRTEL: 0753185973</button>
+          <button onClick={() => window.open('https://wa.me/256795624752')} className="bg-[#00BFFF] px-6 py-3 rounded-lg font-bold text-sm">DONATE: 0795624752</button>
+          <button onClick={() => window.open('https://wa.me/256753988127')} className="bg-white text-[#6C3BAA] px-6 py-3 rounded-lg font-bold text-sm">DONATE: 0753988127</button>
         </div>
+        <Link href="/" className="inline-block bg-transparent border border-white text-white px-6 py-3 rounded-lg font-bold text-sm mt-4">← BACK TO HOME</Link>
       </div>
 
-      <footer className="bg-white text-gray-400 text-[11px] py-4 text-center">© 2026 Creative Minds Initiative Uganda • Makindye, Lukuli Zone • 100 Children • Education + Food</footer>
+      <footer className="bg-white text-gray-400 text-[11px] py-4 text-center">© 2026 Creative Minds Initiative Uganda • Founder: Ssemwogerere Edward • +256795624752 / +256753988127 • Makindye, Lukuli Zone • 100 Children • Education + Food + Shelter • <Link href="/" className="text-[#00BFFF]">Back to Home</Link></footer>
     </main>
   );
 }
