@@ -3,7 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function AboutPage() {
+export default function HomePage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const closeMenu = () => setMenuOpen(false);
 
@@ -12,24 +12,24 @@ export default function AboutPage() {
       <nav className="bg-white shadow-sm sticky top-0 z-50">
         <div className="h-[76px] flex items-center justify-between px-4 lg:px-16">
           <Link href="/" onClick={closeMenu}>
-            <Image src="/logo.png" alt="logo" width={70} height={70} className="object-contain" />
+            <Image src="/logo.png" alt="Creative Minds Initiative Uganda" width={70} height={70} className="object-contain" />
           </Link>
-          <div className="hidden md:flex items-center gap-7 font-semibold text-[15px] text-[#00BFFF]">
-            <Link href="/">Home</Link>
-            <Link href="/about" className="text-[#6C3BAA]">About</Link>
+          <div className="hidden md:flex items-center gap-7 font-bold text-[15px] text-[#6C3BAA]">
+            <Link href="/" className="text-[#6C3BAA]">Home</Link>
+            <Link href="/about">About</Link>
             <Link href="/programs">Programs</Link>
             <Link href="/impact">Impact</Link>
             <Link href="/get-involved">Get Involved</Link>
             <Link href="/get-involved" className="bg-[#6C3BAA] text-white px-6 py-2.5 rounded-lg ml-2">DONATE</Link>
           </div>
-          <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden text-3xl text-[#00BFFF] px-2">
+          <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden text-3xl text-[#6C3BAA] px-2">
             {menuOpen ? "✕" : "☰"}
           </button>
         </div>
         {menuOpen && (
-          <div className="md:hidden bg-white border-t flex flex-col px-6 py-4 gap-4 font-semibold text-[16px] text-[#00BFFF]">
+          <div className="md:hidden bg-white border-t flex flex-col px-6 py-4 gap-4 font-bold text-[16px] text-[#6C3BAA]">
             <Link href="/" onClick={closeMenu}>Home</Link>
-            <Link href="/about" onClick={closeMenu} className="text-[#6C3BAA]">About</Link>
+            <Link href="/about" onClick={closeMenu}>About</Link>
             <Link href="/programs" onClick={closeMenu}>Programs</Link>
             <Link href="/impact" onClick={closeMenu}>Impact</Link>
             <Link href="/get-involved" onClick={closeMenu}>Get Involved</Link>
@@ -38,41 +38,96 @@ export default function AboutPage() {
         )}
       </nav>
 
-      <div className="bg-[#00BFFF] text-white py-16 px-6 lg:px-20 text-center">
-        <h1 className="text-[42px] font-black leading-tight">From Nsambya Slum<br/>To Our Own School In Makindye</h1>
-        <p className="mt-4 text-[14px] max-w-[650px] mx-auto text-white/90">Founded March 20th, 2024 by Ssemwogerere Edward in Nsambya. Today we own land and run a school in Makindye, Lukuli Zone providing Education, Food & Shelter for 100 children.</p>
-      </div>
-
-      {/* IMAGE 9 - ABOVE STORY SECTION */}
-      <div className="px-6 lg:px-20 pt-10">
-        <div className="relative w-full h-[400px] rounded-xl overflow-hidden bg-gray-100">
-          <Image src="/image9.jpg" fill alt="Children from Nsambya" className="object-cover" priority />
-        </div>
-        <p className="text-[11px] text-gray-400 text-center mt-2">Children from Nsambya slum - where our journey began in 2024</p>
-      </div>
-
-      <div className="grid lg:grid-cols-2 gap-10 px-6 lg:px-20 py-14 items-center">
-        <div className="relative h-[380px] rounded-xl overflow-hidden bg-gray-100">
-          <Image src="/image9.jpg" fill alt="Nsambya children" className="object-cover" />
-        </div>
+      {/* HERO - DARK like screenshot - uses hero.jpg */}
+      <div className="bg-[#0A1931] text-white px-6 lg:px-16 py-14 grid lg:grid-cols-2 gap-10 items-center">
         <div>
-          <h2 className="text-[#6C3BAA] font-black text-[26px]">Our Story</h2>
-          <h3 className="font-bold text-[18px] mt-2">I lived in Nsambya. I saw the pain every day.</h3>
-          <p className="text-gray-600 text-[14px] mt-4 leading-relaxed">
-            I, <span className="font-bold text-[#00BFFF]">Ssemwogerere Edward</span>, used to stay in Nsambya slum area. Every morning I watched children - dirty, hungry, not healthy - sitting at home while other kids went to school. 
-            Their parents loved them but couldn't afford food, let alone school fees.
+          <h1 className="text-[48px] leading-[1.1] font-black">Every Child Deserves<br/>Education</h1>
+          <h2 className="text-[#B47DFF] font-black text-[26px] mt-3">Progress With A Purpose</h2>
+          <p className="text-white text-[15px] mt-4 leading-relaxed font-medium max-w-[500px]">
+            Empowering young learners across Uganda through education, creativity, and community support.
             <br/><br/>
-            I promised myself: When I get a better life and connections, I will start my own NGO. On <span className="font-bold">March 20th, 2024</span>, that promise became <span className="font-bold">Creative Minds Initiative Uganda</span>.
-            <br/><br/>
-            <span className="font-bold text-[#6C3BAA]">Paying school fees in other schools was too expensive. So I bought land and built our OWN school in Makindye, Lukuli Zone.</span>
-            <br/><br/>
-            Today we provide Education, Food & Shelter for <span className="font-bold">100 children</span>.
+            <span className="font-black">Founded March 20th, 2024 by Ssemwogerere Edward in Nsambya.</span> Today we own land and run our own school in Makindye, Kipamba, Kampala Uganda - providing Education & Food for 100 children.
           </p>
-          <Link href="/" className="inline-block bg-[#00BFFF] text-white font-bold px-6 py-2.5 rounded-lg mt-6 text-sm">← BACK TO HOME</Link>
+          <div className="flex gap-3 mt-6 flex-wrap">
+            <Link href="/get-involved" className="bg-[#6C3BAA] text-white px-6 py-3 rounded-lg font-black text-sm">♡ DONATE NOW</Link>
+            <Link href="/about" className="border border-white/40 text-white px-6 py-3 rounded-lg font-black text-sm">LEARN MORE</Link>
+          </div>
+        </div>
+        <div className="relative w-full h-[420px] rounded-xl overflow-hidden border-2 border-white/20">
+          <Image src="/hero.jpg" fill alt="Children in classroom" className="object-cover" priority />
         </div>
       </div>
 
-      <footer className="bg-white text-gray-400 text-[11px] py-4 text-center">© 2026 Creative Minds Initiative Uganda • Founder: Ssemwogerere Edward • +256795624752 / +256753988127 • <Link href="/" className="text-[#00BFFF]">Back to Home</Link></footer>
+      {/* MISSION / VISION / COMMITMENT */}
+      <div className="grid lg:grid-cols-2">
+        <div className="bg-[#F6F7F9] px-6 lg:px-10 py-10">
+          <div className="grid md:grid-cols-3 gap-4">
+            <div className="bg-white rounded-xl p-5 shadow text-center">
+              <h3 className="font-black text-black text-[15px]">Our Mission</h3>
+              <p className="text-[13px] text-black font-bold mt-2 leading-relaxed">Providing quality education and creative learning to underserved children in Uganda.</p>
+            </div>
+            <div className="bg-white rounded-xl p-5 shadow text-center">
+              <h3 className="font-black text-black text-[15px]">Our Vision</h3>
+              <p className="text-[13px] text-black font-bold mt-2 leading-relaxed">A Uganda where every child unlocks their creative potential and thrives.</p>
+            </div>
+            <div className="bg-white rounded-xl p-5 shadow text-center">
+              <h3 className="font-black text-black text-[15px]">Our Commitment</h3>
+              <p className="text-[13px] text-black font-bold mt-2 leading-relaxed">Delivering sustainable programs focused on learning, growth, and opportunity.</p>
+            </div>
+          </div>
+
+          <h2 className="font-black text-[26px] text-black mt-10">Our Programs</h2>
+          <div className="grid md:grid-cols-3 gap-4 mt-5">
+            <div className="bg-white rounded-xl overflow-hidden shadow border">
+              <div className="relative h-[120px]"><Image src="/literacy.jpg" fill alt="Literacy" className="object-cover" /></div>
+              <div className="p-4">
+                <h4 className="font-black text-black text-[14px]">📚 Literacy</h4>
+                <p className="text-[12px] text-black font-medium mt-1">Reading, writing, numeracy for 100 children in Makindye, Kipamba.</p>
+              </div>
+            </div>
+            <div className="bg-white rounded-xl overflow-hidden shadow border">
+              <div className="relative h-[120px]"><Image src="/girls.jpg" fill alt="Girls Education" className="object-cover" /></div>
+              <div className="p-4">
+                <h4 className="font-black text-black text-[14px]">👧 Girls Education</h4>
+                <p className="text-[12px] text-black font-medium mt-1">Empowering girls with education and life skills to thrive.</p>
+              </div>
+            </div>
+            <div className="bg-white rounded-xl overflow-hidden shadow border">
+              <div className="relative h-[120px]"><Image src="/skills.jpg" fill alt="Skills" className="object-cover" /></div>
+              <div className="p-4">
+                <h4 className="font-black text-black text-[14px]">🎨 Creative Skills</h4>
+                <p className="text-[12px] text-black font-medium mt-1">Art, music, and creative learning to unlock potential.</p>
+              </div>
+            </div>
+          </div>
+          <Link href="/programs" className="inline-block bg-[#00BFFF] text-white font-black px-6 py-3 rounded-lg mt-6 text-sm">VIEW ALL PROGRAMS →</Link>
+        </div>
+
+        <div className="bg-[#6C3BAA] text-white px-6 lg:px-10 py-10 text-center flex flex-col justify-center">
+          <h3 className="font-black text-[20px]">Our Impact in Numbers</h3>
+          <div className="font-black text-[72px] leading-none mt-4">100+</div>
+          <div className="font-bold text-[15px]">Children Reached</div>
+          <div className="grid grid-cols-2 gap-4 mt-8 text-left">
+            <div className="bg-white/10 rounded-xl p-4"><div className="font-black text-2xl">100</div><div className="text-[12px] font-bold">Children in Our School</div></div>
+            <div className="bg-white/10 rounded-xl p-4"><div className="font-black text-2xl">Own Land</div><div className="text-[12px] font-bold">Makindye, Kipamba</div></div>
+            <div className="bg-white/10 rounded-xl p-4"><div className="font-black text-2xl">2</div><div className="text-[12px] font-bold">Education & Food</div></div>
+            <div className="bg-white/10 rounded-xl p-4"><div className="font-black text-2xl">2024</div><div className="text-[12px] font-bold">Founded March 20</div></div>
+          </div>
+          <p className="text-[13px] font-bold mt-6">📍 Makindye, Kipamba, Kampala Uganda<br/>Founder: Ssemwogerere Edward</p>
+          <Link href="/impact" className="bg-white text-[#6C3BAA] font-black px-6 py-3 rounded-lg mt-6 text-sm inline-block">SEE OUR IMPACT →</Link>
+        </div>
+      </div>
+
+      <div className="bg-[#00BFFF] text-white text-center py-12 px-6">
+        <h2 className="font-black text-[26px]">Help Us Reach The Next 100 Children</h2>
+        <p className="text-[15px] mt-2 font-bold">We have land, we have 100 children, we need more classrooms, books, and food. Your $10 feeds 5 children.</p>
+        <div className="flex justify-center gap-3 mt-6 flex-wrap">
+          <button onClick={() => window.open('https://wa.me/256795624752')} className="bg-[#6C3BAA] px-6 py-3 rounded-lg font-black text-sm">DONATE: 0795624752</button>
+          <button onClick={() => window.open('https://wa.me/256753988127')} className="bg-white text-[#00BFFF] px-6 py-3 rounded-lg font-black text-sm">DONATE: 0753988127</button>
+        </div>
+      </div>
+
+      <footer className="bg-white text-black font-bold text-[11px] py-4 text-center">© 2026 Creative Minds Initiative Uganda • Founder: Ssemwogerere Edward • +256795624752 / +256753988127 • School: Makindye, Kipamba, Kampala Uganda • Founded March 20, 2024</footer>
     </main>
   );
 }
