@@ -38,22 +38,22 @@ export default function HomePage() {
         )}
       </nav>
 
-      {/* HERO - DARK like screenshot - uses hero.jpg */}
-      <div className="bg-[#0A1931] text-white px-6 lg:px-16 py-14 grid lg:grid-cols-2 gap-10 items-center">
+      {/* HERO - HOT SKYBLUE */}
+      <div className="bg-[#00BFFF] text-white px-6 lg:px-16 py-14 grid lg:grid-cols-2 gap-10 items-center">
         <div>
-          <h1 className="text-[48px] leading-[1.1] font-black">Every Child Deserves<br/>Education</h1>
-          <h2 className="text-[#B47DFF] font-black text-[26px] mt-3">Progress With A Purpose</h2>
-          <p className="text-white text-[15px] mt-4 leading-relaxed font-medium max-w-[500px]">
+          <h1 className="text-[48px] leading-[1.1] font-black drop-shadow">Every Child Deserves<br/>Education</h1>
+          <h2 className="text-[#6C3BAA] font-black text-[26px] mt-3 bg-white inline-block px-3 py-1 rounded-lg">Progress With A Purpose</h2>
+          <p className="text-white text-[15px] mt-4 leading-relaxed font-bold max-w-[500px]">
             Empowering young learners across Uganda through education, creativity, and community support.
             <br/><br/>
             <span className="font-black">Founded March 20th, 2024 by Ssemwogerere Edward in Nsambya.</span> Today we own land and run our own school in Makindye, Kipamba, Kampala Uganda - providing Education & Food for 100 children.
           </p>
           <div className="flex gap-3 mt-6 flex-wrap">
-            <Link href="/get-involved" className="bg-[#6C3BAA] text-white px-6 py-3 rounded-lg font-black text-sm">♡ DONATE NOW</Link>
-            <Link href="/about" className="border border-white/40 text-white px-6 py-3 rounded-lg font-black text-sm">LEARN MORE</Link>
+            <Link href="/get-involved" className="bg-[#6C3BAA] text-white px-6 py-3 rounded-lg font-black text-sm shadow">♡ DONATE NOW</Link>
+            <Link href="/about" className="bg-white text-[#00BFFF] px-6 py-3 rounded-lg font-black text-sm shadow">LEARN MORE</Link>
           </div>
         </div>
-        <div className="relative w-full h-[420px] rounded-xl overflow-hidden border-2 border-white/20">
+        <div className="relative w-full h-[420px] rounded-xl overflow-hidden border-4 border-white shadow-xl">
           <Image src="/hero.jpg" fill alt="Children in classroom" className="object-cover" priority />
         </div>
       </div>
