@@ -3,6 +3,8 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+const GOFUNDME_URL = "https://gofund.me/8f91590e5";
+
 export default function ProgramsPage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const closeMenu = () => setMenuOpen(false);
@@ -20,7 +22,7 @@ export default function ProgramsPage() {
             <Link href="/programs" className="text-[#6C3BAA]">Programs</Link>
             <Link href="/impact">Impact</Link>
             <Link href="/get-involved">Get Involved</Link>
-            <Link href="/get-involved" className="bg-[#6C3BAA] text-white px-6 py-2.5 rounded-lg ml-2">DONATE</Link>
+            <button onClick={() => window.open(GOFUNDME_URL)} className="bg-[#6C3BAA] text-white px-6 py-2.5 rounded-lg ml-2">DONATE</button>
           </div>
           <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden text-3xl text-[#00BFFF] px-2">
             {menuOpen ? "✕" : "☰"}
@@ -33,6 +35,7 @@ export default function ProgramsPage() {
             <Link href="/programs" onClick={closeMenu} className="text-[#6C3BAA]">Programs</Link>
             <Link href="/impact" onClick={closeMenu}>Impact</Link>
             <Link href="/get-involved" onClick={closeMenu}>Get Involved</Link>
+            <button onClick={() => window.open(GOFUNDME_URL)} className="bg-[#6C3BAA] text-white px-6 py-3 rounded-lg text-center">DONATE ON GOFUNDME</button>
           </div>
         )}
       </nav>
@@ -42,6 +45,7 @@ export default function ProgramsPage() {
         <p className="mt-3 text-[15px] max-w-[600px] mx-auto text-white font-bold">
           We were all born to thrive. We empower children in Makindye, Kipamba, Kampala Uganda through The Mind and The Body - Education & Food for 100 children.
         </p>
+        <button onClick={() => window.open(GOFUNDME_URL)} className="bg-[#6C3BAA] px-8 py-3.5 rounded-xl font-black text-sm mt-6">❤️ DONATE ON GOFUNDME</button>
       </div>
 
       {/* EDUCATION */}
@@ -55,7 +59,7 @@ export default function ProgramsPage() {
           <div>
             <h3 className="font-black text-[18px] text-black">Why We Built Our Own School</h3>
             <p className="text-black text-[15px] mt-4 leading-relaxed font-medium">
-              When I, <span className="font-black">Ssemwogerere Edward</span>, started Creative Minds Initiative Uganda on March 20th, 2024, I was staying in Nsambya slum. I saw many children suffering - no education, no food, not healthy because their parents couldn't afford to take care of them.<br/><br/>
+              When I, <span className="font-black">Ssemwogerere Edward</span>, started Creative Minds Initiative Uganda on 1 January 2024, I was staying in Nsambya slum. I saw many children suffering - no education, no food, not healthy because their parents couldn't afford to take care of them.<br/><br/>
               At first, we tried to pay school fees in other schools, but it was too expensive and not sustainable. So I made a big decision - <span className="font-black text-[#6C3BAA]">I bought land and built our own school in Makindye, Kipamba, Kampala Uganda.</span><br/><br/>
               Now, instead of begging other schools to take our children, we teach <span className="font-black">100 children</span> in our own classrooms. Our teachers are from the community. They understand the pain of Nsambya because they lived it too.<br/><br/>
               We provide free education because we believe <span className="font-black text-[#00BFFF]">every child was born to thrive</span> - with God's unique stamp, a plan and a purpose. Education is how they discover they matter.
@@ -71,7 +75,10 @@ export default function ProgramsPage() {
                 <li>Teachers who care, from our own community</li>
               </ul>
             </div>
-            <button onClick={() => window.open('https://wa.me/256795624752?text=Hello Edward, I want to support EDUCATION program')} className="bg-[#6C3BAA] text-white font-black px-6 py-3 rounded-lg mt-6 text-sm">SUPPORT EDUCATION - 0795624752</button>
+            <div className="flex gap-3 mt-6 flex-wrap">
+              <button onClick={() => window.open(GOFUNDME_URL)} className="bg-[#00A651] text-white font-black px-6 py-3 rounded-lg text-sm">❤️ SUPPORT EDUCATION ON GOFUNDME</button>
+              <button onClick={() => window.open('https://wa.me/256795624752?text=Hello Edward, I want to support EDUCATION program')} className="bg-[#6C3BAA] text-white font-black px-6 py-3 rounded-lg text-sm">SUPPORT EDUCATION - 0795624752</button>
+            </div>
           </div>
 
           <div className="space-y-4">
@@ -132,7 +139,10 @@ export default function ProgramsPage() {
                 <li>Nutrition support for sick/malnourished children</li>
               </ul>
             </div>
-            <button onClick={() => window.open('https://wa.me/256753988127?text=Hello Edward, I want to support FOOD program')} className="bg-[#00BFFF] text-white font-black px-6 py-3 rounded-lg mt-6 text-sm">SUPPORT FOOD - 0753988127</button>
+            <div className="flex gap-3 mt-6 flex-wrap">
+              <button onClick={() => window.open(GOFUNDME_URL)} className="bg-[#00A651] text-white font-black px-6 py-3 rounded-lg text-sm">❤️ SUPPORT FOOD ON GOFUNDME</button>
+              <button onClick={() => window.open('https://wa.me/256753988127?text=Hello Edward, I want to support FOOD program')} className="bg-[#00BFFF] text-white font-black px-6 py-3 rounded-lg text-sm">SUPPORT FOOD - 0753988127</button>
+            </div>
           </div>
         </div>
       </div>
@@ -146,13 +156,14 @@ export default function ProgramsPage() {
           <div className="bg-white text-[#6C3BAA] px-5 py-3 rounded-lg font-black text-xs"> $50 = Food + Education for 1 child / month </div>
         </div>
         <div className="flex justify-center gap-3 mt-6 flex-wrap">
+          <button onClick={() => window.open(GOFUNDME_URL)} className="bg-[#00A651] px-6 py-3 rounded-lg font-black text-sm">❤️ DONATE ON GOFUNDME</button>
           <button onClick={() => window.open('https://wa.me/256795624752')} className="bg-[#00BFFF] px-6 py-3 rounded-lg font-black text-sm">DONATE: 0795624752</button>
           <button onClick={() => window.open('https://wa.me/256753988127')} className="bg-white text-[#6C3BAA] px-6 py-3 rounded-lg font-black text-sm">DONATE: 0753988127</button>
         </div>
         <Link href="/" className="inline-block bg-transparent border-2 border-white text-white px-6 py-3 rounded-lg font-black text-sm mt-4">← BACK TO HOME</Link>
       </div>
 
-      <footer className="bg-white text-black font-bold text-[11px] py-4 text-center">© 2026 Creative Minds Initiative Uganda • Founder: Ssemwogerere Edward • +256795624752 / +256753988127 • Makindye, Kipamba, Kampala Uganda • 100 Children • Education + Food • <Link href="/" className="text-[#00BFFF]">Back to Home</Link></footer>
+      <footer className="bg-white text-black font-bold text-[11px] py-4 text-center">© 2026 Creative Minds Initiative Uganda • Founder: Ssemwogerere Edward • +256795624752 / +256753988127 • Makindye, Kipamba, Kampala Uganda • Founded 1 January 2024 • 100 Children • Education + Food • <a href={GOFUNDME_URL} target="_blank" className="text-[#00A651] underline">GoFundMe Campaign</a> • <Link href="/" className="text-[#00BFFF]">Back to Home</Link></footer>
     </main>
   );
 }

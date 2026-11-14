@@ -3,6 +3,8 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+const GOFUNDME_URL = "https://gofund.me/8f91590e5";
+
 export default function GetInvolvedPage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const closeMenu = () => setMenuOpen(false);
@@ -20,7 +22,7 @@ export default function GetInvolvedPage() {
             <Link href="/programs">Programs</Link>
             <Link href="/impact">Impact</Link>
             <Link href="/get-involved" className="text-[#6C3BAA]">Get Involved</Link>
-            <button onClick={() => window.open('https://wa.me/256795624752')} className="bg-[#6C3BAA] text-white px-6 py-2.5 rounded-lg ml-2">DONATE</button>
+            <button onClick={() => window.open(GOFUNDME_URL)} className="bg-[#6C3BAA] text-white px-6 py-2.5 rounded-lg ml-2">DONATE</button>
           </div>
           <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden text-3xl text-[#00BFFF] px-2">
             {menuOpen ? "✕" : "☰"}
@@ -33,6 +35,7 @@ export default function GetInvolvedPage() {
             <Link href="/programs" onClick={closeMenu}>Programs</Link>
             <Link href="/impact" onClick={closeMenu}>Impact</Link>
             <Link href="/get-involved" onClick={closeMenu} className="text-[#6C3BAA]">Get Involved</Link>
+            <button onClick={() => window.open(GOFUNDME_URL)} className="bg-[#6C3BAA] text-white px-6 py-3 rounded-lg text-center">DONATE ON GOFUNDME</button>
           </div>
         )}
       </nav>
@@ -42,6 +45,9 @@ export default function GetInvolvedPage() {
         <p className="mt-4 text-[15px] max-w-[700px] mx-auto text-white font-bold leading-relaxed">
           At Creative Minds Initiative Uganda, we believe every child deserves access to education, nutritious food, and life skills to become someone in life. We currently support 100 children in Makindye, Kipamba, Kampala Uganda. Our goal is to add 100 more children every year — but we cannot achieve this alone without your support.
         </p>
+        <div className="flex justify-center mt-6">
+          <button onClick={() => window.open(GOFUNDME_URL)} className="bg-[#6C3BAA] px-8 py-3.5 rounded-xl font-black text-sm">❤️ DONATE ON GOFUNDME</button>
+        </div>
       </div>
 
       <div className="px-6 lg:px-20 py-12 grid lg:grid-cols-2 gap-12 items-start">
@@ -49,7 +55,7 @@ export default function GetInvolvedPage() {
           <h2 className="font-black text-[24px] text-[#6C3BAA]">Why Your Support Matters</h2>
           <p className="text-black text-[15px] mt-4 leading-relaxed font-medium">
             I am <span className="font-black">Ssemwogerere Edward</span>, Founder of Creative Minds Initiative Uganda. I lived in Nsambya slum area and witnessed firsthand children suffering without access to education, food, or healthcare, simply because their parents could not afford to provide for them.<br/><br/>
-            On <span className="font-black">March 20th, 2024</span>, I made a commitment to change this reality. I promised that when I had the opportunity and connections, I would start an organization to support these children. That commitment became Creative Minds Initiative Uganda.<br/><br/>
+            On <span className="font-black">1 January 2024</span>, I made a commitment to change this reality. I promised that when I had the opportunity and connections, I would start an organization to support these children. That commitment became Creative Minds Initiative Uganda.<br/><br/>
             Initially, we attempted to pay school fees in other private schools, but the costs were unsustainable. Therefore, we made a strategic decision to <span className="font-black text-[#6C3BAA]">acquire land and establish our own school in Makindye, Kipamba, Kampala Uganda.</span><br/><br/>
             Today, we provide holistic support — education and daily meals — to <span className="font-black">100 vulnerable children</span>.<br/><br/>
             <span className="font-black text-[#00BFFF] text-[15px]">However, hundreds more children in Nsambya and Makindye still lack basic needs. Our strategic goal is to expand our reach by enrolling an additional 100 children each year. To achieve this, we need partners like you. Without external support, this growth is not possible.</span>
@@ -73,6 +79,17 @@ export default function GetInvolvedPage() {
               <p className="text-[14px] text-black mt-1 leading-relaxed font-medium">By sharing our work with your network, you help us reach potential donors and partners. One share can secure education and food for multiple children.</p>
             </div>
           </div>
+
+          {/* VOLUNTEER TEACHING STAFF - IMAGE12 */}
+          <div className="mt-10">
+            <h3 className="font-black text-[22px] text-[#6C3BAA]">Our Volunteer Teaching Staff</h3>
+            <p className="text-black text-[14px] mt-2 leading-relaxed font-medium">Our school runs because of dedicated volunteer teachers who give their time every day to teach, feed and love our 100 children in Makindye, Kipamba.</p>
+            <div className="relative w-full h-[400px] rounded-xl overflow-hidden bg-gray-100 border mt-4">
+              <Image src="/image12.jpg" fill alt="Volunteer Teaching Staff - Creative Minds Initiative Uganda" className="object-cover" />
+            </div>
+            <p className="text-[12px] text-black font-bold text-center mt-2">Volunteer Teaching Staff - Makindye, Kipamba School - 100 Children</p>
+          </div>
+
           <Link href="/" className="inline-block bg-[#00BFFF] text-white font-black px-6 py-2.5 rounded-lg mt-8 text-sm">← BACK TO HOME</Link>
         </div>
 
@@ -81,6 +98,7 @@ export default function GetInvolvedPage() {
           <p className="text-[14px] text-white font-bold mt-3 leading-relaxed">Help us reach our annual goal of adding 100 more children. Every child deserves the opportunity to learn, eat, and acquire skills to build a meaningful future.</p>
           
           <div className="mt-6 space-y-3">
+            <button onClick={() => window.open(GOFUNDME_URL)} className="w-full bg-[#00A651] text-white font-black py-3.5 rounded-xl text-sm">❤️ DONATE ON GOFUNDME</button>
             <button onClick={() => window.open('https://wa.me/256795624752?text=Hello Edward, I would like to support your goal of adding 100 more children each year. Every child deserves education, food, and skills.')} className="w-full bg-white text-[#6C3BAA] font-black py-3.5 rounded-xl text-sm">DONATE VIA: 0795624752</button>
             <button onClick={() => window.open('https://wa.me/256753988127?text=Hello Edward, I would like to support your mission to add 100 more children annually.')} className="w-full bg-[#00BFFF] text-white font-black py-3.5 rounded-xl text-sm">DONATE VIA: 0753988127</button>
             <button onClick={() => window.open('https://wa.me/256753988127?text=Hello Edward, I am interested in sponsoring a child to provide education, food, and skills for a better future.')} className="w-full bg-transparent border-2 border-white text-white font-black py-3.5 rounded-xl text-sm">SPONSOR A CHILD VIA WHATSAPP</button>
@@ -88,8 +106,9 @@ export default function GetInvolvedPage() {
 
           <div className="mt-6 bg-white/10 rounded-xl p-4 text-center">
             <div className="font-black text-sm">Our School Location</div>
-            <div className="text-xs mt-2 text-white font-bold leading-relaxed">Makindye, Kipamba, Kampala Uganda<br/>Established March 20th, 2024 — Originating from Nsambya<br/>Founder: Ssemwogerere Edward</div>
+            <div className="text-xs mt-2 text-white font-bold leading-relaxed">Makindye, Kipamba, Kampala Uganda<br/>Established 1 January 2024 — Originating from Nsambya<br/>Founder: Ssemwogerere Edward</div>
             <div className="text-[11px] mt-3 text-white font-bold">Email: creativemindsinitiativeugandan@gmail.com<br/>Tel: +256795624752 / +256753988127</div>
+            <button onClick={() => window.open(GOFUNDME_URL)} className="mt-4 w-full bg-white text-[#00A651] font-black py-2.5 rounded-lg text-xs">View Our GoFundMe Campaign</button>
           </div>
 
           <p className="text-[11px] text-white font-bold mt-6 text-center italic">Every child deserves access to education, food and life skills to become someone in life. Your support makes this possible.</p>
@@ -100,12 +119,13 @@ export default function GetInvolvedPage() {
         <h2 className="font-black text-[26px]">We Cannot Reach the Next 100 Without You</h2>
         <p className="text-[15px] mt-3 max-w-[650px] mx-auto leading-relaxed font-bold">We have successfully provided education and nutrition to 100 children. With your partnership, we will enroll 100 additional children next year, and continue expanding annually. Every child deserves the opportunity to thrive.</p>
         <div className="flex justify-center gap-3 mt-8 flex-wrap">
+          <button onClick={() => window.open(GOFUNDME_URL)} className="bg-[#00A651] px-8 py-3 rounded-xl font-black text-sm">❤️ DONATE ON GOFUNDME</button>
           <button onClick={() => window.open('https://wa.me/256795624752')} className="bg-[#6C3BAA] px-8 py-3 rounded-xl font-black text-sm">YES, I WANT TO HELP</button>
           <Link href="/" className="bg-white text-[#00BFFF] px-8 py-3 rounded-xl font-black text-sm">BACK TO HOME</Link>
         </div>
       </div>
 
-      <footer className="bg-white text-black font-bold text-[11px] py-4 text-center">© 2026 Creative Minds Initiative Uganda • Founder: Ssemwogerere Edward • +256795624752 / +256753988127 • Makindye, Kipamba, Kampala Uganda • Strategic Goal: Enroll 100 Additional Children Annually • <Link href="/" className="text-[#00BFFF]">Back to Home</Link></footer>
+      <footer className="bg-white text-black font-bold text-[11px] py-4 text-center">© 2026 Creative Minds Initiative Uganda • Founder: Ssemwogerere Edward • +256795624752 / +256753988127 • Makindye, Kipamba, Kampala Uganda • Founded 1 January 2024 • Strategic Goal: Enroll 100 Additional Children Annually • <a href={GOFUNDME_URL} target="_blank" className="text-[#00A651] underline">GoFundMe Campaign</a> • <Link href="/" className="text-[#00BFFF]">Back to Home</Link></footer>
     </main>
   );
 }

@@ -40,7 +40,7 @@ export default function AboutPage() {
 
       <div className="bg-[#00BFFF] text-white py-16 px-6 lg:px-20 text-center">
         <h1 className="text-[42px] font-black leading-tight">From Nsambya Slum<br/>To Our Own School In Makindye</h1>
-        <p className="mt-4 text-[15px] max-w-[650px] mx-auto text-white font-bold">Founded March 20th, 2024 by Ssemwogerere Edward in Nsambya. Today we own land and run a school in Makindye, Kipamba, Kampala Uganda providing Education & Food for 100 children.</p>
+        <p className="mt-4 text-[15px] max-w-[650px] mx-auto text-white font-bold">Founded 1 January 2024 by Ssemwogerere Edward in Nsambya. Today we own land and run a school in Makindye, Kipamba, Kampala Uganda providing Education & Food for 100 children.</p>
       </div>
 
       <div className="px-6 lg:px-20 pt-10">
@@ -61,7 +61,7 @@ export default function AboutPage() {
             I, <span className="font-black text-[#00BFFF]">Ssemwogerere Edward</span>, used to stay in Nsambya slum area. Every morning I watched children - dirty, hungry, not healthy - sitting at home while other kids went to school. 
             Their parents loved them but couldn't afford food, let alone school fees.
             <br/><br/>
-            I promised myself: When I get a better life and connections, I will start my own NGO. On <span className="font-black">March 20th, 2024</span>, that promise became <span className="font-black">Creative Minds Initiative Uganda</span>.
+            I promised myself: When I get a better life and connections, I will start my own NGO. On <span className="font-black">1 January 2024</span>, that promise became <span className="font-black">Creative Minds Initiative Uganda</span>.
             <br/><br/>
             <span className="font-black text-[#6C3BAA]">Then I realized: Paying school fees in other schools was too expensive and not sustainable. So I made a big decision - I bought land and built our OWN school.</span>
             <br/><br/>
@@ -121,7 +121,7 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* FOUNDER - IMAGE10 KEPT */}
+      {/* FOUNDER - IMAGE10 FIXED */}
       <div className="bg-[#6C3BAA] text-white px-6 lg:px-20 py-14 grid lg:grid-cols-[0.8fr_1.2fr] gap-8 items-center">
         <div className="relative h-[380px] rounded-xl overflow-hidden bg-white border-4 border-white">
           <Image src="/image10.jpg" fill alt="Ssemwogerere Edward - Founder" className="object-cover" />
@@ -145,7 +145,7 @@ export default function AboutPage() {
         <Link href="/" className="inline-block bg-transparent border-2 border-white text-white px-6 py-3 rounded-lg font-black text-sm mt-4">← BACK TO HOME</Link>
       </div>
 
-      <footer className="bg-white text-black font-bold text-[11px] py-4 text-center">© 2026 Creative Minds Initiative Uganda • Founder: Ssemwogerere Edward • +256795624752 / +256753988127 • School Location: Makindye, Kipamba, Kampala Uganda • Founded March 20, 2024 • <Link href="/" className="text-[#00BFFF]">Back to Home</Link></footer>
+      <footer className="bg-white text-black font-bold text-[11px] py-4 text-center">© 2026 Creative Minds Initiative Uganda • Founder: Ssemwogerere Edward • +256795624752 / +256753988127 • School Location: Makindye, Kipamba, Kampala Uganda • Founded 1 January 2024 • <Link href="/" className="text-[#00BFFF]">Back to Home</Link></footer>
     </main>
   );
 }
