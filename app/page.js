@@ -3,6 +3,8 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+const GOFUNDME_URL = "https://gofund.me/8f91590e5";
+
 export default function HomePage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const closeMenu = () => setMenuOpen(false);
@@ -20,7 +22,7 @@ export default function HomePage() {
             <Link href="/programs">Programs</Link>
             <Link href="/impact">Impact</Link>
             <Link href="/get-involved">Get Involved</Link>
-            <Link href="/get-involved" className="bg-[#6C3BAA] text-white px-6 py-2.5 rounded-lg ml-2">DONATE</Link>
+            <button onClick={() => window.open(GOFUNDME_URL)} className="bg-[#6C3BAA] text-white px-6 py-2.5 rounded-lg ml-2">DONATE</button>
           </div>
           <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden text-3xl text-[#6C3BAA] px-2">
             {menuOpen ? "✕" : "☰"}
@@ -33,7 +35,7 @@ export default function HomePage() {
             <Link href="/programs" onClick={closeMenu}>Programs</Link>
             <Link href="/impact" onClick={closeMenu}>Impact</Link>
             <Link href="/get-involved" onClick={closeMenu}>Get Involved</Link>
-            <Link href="/get-involved" onClick={closeMenu} className="bg-[#6C3BAA] text-white px-6 py-3 rounded-lg text-center">DONATE</Link>
+            <button onClick={() => window.open(GOFUNDME_URL)} className="bg-[#6C3BAA] text-white px-6 py-3 rounded-lg text-center">DONATE ON GOFUNDME</button>
           </div>
         )}
       </nav>
@@ -46,10 +48,10 @@ export default function HomePage() {
           <p className="text-white text-[15px] mt-4 leading-relaxed font-bold max-w-[500px]">
             Empowering young learners across Uganda through education, creativity, and community support.
             <br/><br/>
-            <span className="font-black">Founded March 20th, 2024 by Ssemwogerere Edward in Nsambya.</span> Today we own land and run our own school in Makindye, Kipamba, Kampala Uganda - providing Education & Food for 100 children.
+            <span className="font-black">Founded 1 January 2024 by Ssemwogerere Edward in Nsambya.</span> Today we own land and run our own school in Makindye, Kipamba, Kampala Uganda - providing Education & Food for 100 children.
           </p>
           <div className="flex gap-3 mt-6 flex-wrap">
-            <Link href="/get-involved" className="bg-[#6C3BAA] text-white px-6 py-3 rounded-lg font-black text-sm shadow">♡ DONATE NOW</Link>
+            <button onClick={() => window.open(GOFUNDME_URL)} className="bg-[#6C3BAA] text-white px-6 py-3 rounded-lg font-black text-sm shadow">♡ DONATE NOW ON GOFUNDME</button>
             <Link href="/about" className="bg-white text-[#00BFFF] px-6 py-3 rounded-lg font-black text-sm shadow">LEARN MORE</Link>
           </div>
         </div>
@@ -111,7 +113,7 @@ export default function HomePage() {
             <div className="bg-white/10 rounded-xl p-4"><div className="font-black text-2xl">100</div><div className="text-[12px] font-bold">Children in Our School</div></div>
             <div className="bg-white/10 rounded-xl p-4"><div className="font-black text-2xl">Own Land</div><div className="text-[12px] font-bold">Makindye, Kipamba</div></div>
             <div className="bg-white/10 rounded-xl p-4"><div className="font-black text-2xl">2</div><div className="text-[12px] font-bold">Education & Food</div></div>
-            <div className="bg-white/10 rounded-xl p-4"><div className="font-black text-2xl">2024</div><div className="text-[12px] font-bold">Founded March 20</div></div>
+            <div className="bg-white/10 rounded-xl p-4"><div className="font-black text-2xl">2024</div><div className="text-[12px] font-bold">Founded 1 Jan</div></div>
           </div>
           <p className="text-[13px] font-bold mt-6">📍 Makindye, Kipamba, Kampala Uganda<br/>Founder: Ssemwogerere Edward</p>
           <Link href="/impact" className="bg-white text-[#6C3BAA] font-black px-6 py-3 rounded-lg mt-6 text-sm inline-block">SEE OUR IMPACT →</Link>
@@ -122,12 +124,13 @@ export default function HomePage() {
         <h2 className="font-black text-[26px]">Help Us Reach The Next 100 Children</h2>
         <p className="text-[15px] mt-2 font-bold">We have land, we have 100 children, we need more classrooms, books, and food. Your $10 feeds 5 children.</p>
         <div className="flex justify-center gap-3 mt-6 flex-wrap">
+          <button onClick={() => window.open(GOFUNDME_URL)} className="bg-[#00A651] px-8 py-3 rounded-lg font-black text-sm">❤️ DONATE ON GOFUNDME</button>
           <button onClick={() => window.open('https://wa.me/256795624752')} className="bg-[#6C3BAA] px-6 py-3 rounded-lg font-black text-sm">DONATE: 0795624752</button>
           <button onClick={() => window.open('https://wa.me/256753988127')} className="bg-white text-[#00BFFF] px-6 py-3 rounded-lg font-black text-sm">DONATE: 0753988127</button>
         </div>
       </div>
 
-      <footer className="bg-white text-black font-bold text-[11px] py-4 text-center">© 2026 Creative Minds Initiative Uganda • Founder: Ssemwogerere Edward • +256795624752 / +256753988127 • School: Makindye, Kipamba, Kampala Uganda • Founded March 20, 2024</footer>
+      <footer className="bg-white text-black font-bold text-[11px] py-4 text-center">© 2026 Creative Minds Initiative Uganda • Founder: Ssemwogerere Edward • +256795624752 / +256753988127 • School: Makindye, Kipamba, Kampala Uganda • Founded 1 January 2024 • <a href={GOFUNDME_URL} target="_blank" className="text-[#00A651] underline">GoFundMe Campaign</a></footer>
     </main>
   );
 }
